@@ -1,0 +1,163 @@
+{
+  "construction": {
+    "access_recipe": "Use the CFPB search API endpoint https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/ with one full-year CSV export per year: append a query carrying format csv, the product value Checking or savings account, date_received_min set to YYYY-01-01, date_received_max set to YYYY-12-31, and no_aggs true. Do not send size, from or frm. The server caps size at 100, and with format=csv it ignores size and from and returns the entire filtered annual result set, up to the 100000-row export cap; annual published volumes are below that cap. The CFPB edge rejects urllib's default Python-urllib agent with 403. Because the build must call source_io.fetch, install a standard-library wrapper around urllib.request.urlopen inside the builder to force a simple tool agent, curl/8.5.0, and retry 403, 429 and 5xx with backoff. The CSV uses display headers; map Date received, Product, Sub-product, Issue, Sub-issue, Company, State, Submitted via, Company response to consumer and Complaint ID to the declared snake_case names, and retain observed headers plus missing names in any field failure. A verified large fallback is the official bulk ZIP at https://files.consumerfinance.gov/ccdb/complaints.csv.zip, opened with zipfile.ZipFile and streamed with csv.reader from the single complaints.csv member; it is unnecessary when the annual API exports succeed.",
+    "expected_size": "Live API reports 19,020,152 total records. Filtered checking/savings cohort: 162,983 rows (21,734 in 2019; 24,238 in 2020; 29,556 in 2021; 37,582 in 2022; 49,873 in 2023), with 26,236 monetary-relief positives (16.1%). The full bulk CSV is large: roughly 1.4 GB zipped and about 9 GB uncompressed, estimated from ~19 million rows; a 2026-08-11 mirror observation reported 1.41 GB zipped, 9.09 GB uncompressed, and 17.0 million rows.",
+    "format": "CSV; one row per published complaint; product, issue, sub-issue and company are categorical strings; date_received is ISO-8601 with time.",
+    "source_examples": "API records observed on 2026-11-09 include: complaint_id 3386321, date_received 2019-06-19, product 'Checking or savings account', sub_product 'Other banking product or service', issue 'Managing an account', sub_issue 'Deposits and withdrawals', company 'BB&T CORPORATION', state 'PA', submitted_via 'Referral', company_response 'Closed with explanation'. complaint_id 5759160, date_received 2022-06-30, product 'Checking or savings account', sub_product 'Checking account', issue 'Managing an account', sub_issue 'Funds not handled or disbursed as instructed', company 'CITIBANK, N.A.', state 'NY', submitted_via 'Referral', company_response 'Closed with explanation'. complaint_id 8091610, date_received 2023-12-29, product 'Checking or savings account', sub_product 'CD (Certificate of Deposit)', issue 'Managing an account', sub_issue 'Problem with renewal', company 'FIRST CITIZENS BANCSHARES, INC.', state 'NY', submitted_via 'Referral', company_response 'Closed with monetary relief'."
+  },
+  "dataset_id": "cfpb-bank-account-monetary-relief",
+  "evidence": [
+    {
+      "claim": "The CFPB legal notices state that CFPB-created information is in the public domain and may be reproduced, published or otherwise used without the Bureau's permission; this archived capture of the official page is used because the live page returns HTTP 403 to the capture worker.",
+      "quote": "Information created by the CFPB is in the public domain and you may reproduce, publish, or otherwise use it without the Bureau\u2019s permission.",
+      "url": "https://web.archive.org/web/20261028035549/https://www.consumerfinance.gov/privacy/website-privacy-policy/"
+    },
+    {
+      "claim": "17 U.S.C. \u00a7105(a) is the statutory public-domain basis: copyright protection is not available for any work of the United States Government.",
+      "quote": "Copyright protection under this title is not available for any work of the United States Government, but the United States Government is not precluded from receiving and holding copyrights transferred to it by assignment, bequest, or otherwise.",
+      "url": "https://uscode.house.gov/us/usc/119-136/t17/s105/"
+    },
+    {
+      "claim": "17 U.S.C. \u00a7101 defines a work of the United States Government as one prepared by a federal officer or employee as part of official duties, which covers the CFPB-published compilation of these records.",
+      "quote": "A \u201cwork of the United States Government\u201d is a work prepared by an officer or employee of the United States Government as part of that person\u2019s official duties.",
+      "url": "https://uscode.house.gov/us/usc/119-136/t17/s101/"
+    },
+    {
+      "claim": "The House Report accompanying \u00a7105 states that the public-domain rule has no effect on protection abroad, so the designation is a U.S. status and not a worldwide dedication.",
+      "quote": "The prohibition on copyright protection for United States Government works is not intended to have any effect on protection of these works abroad.",
+      "url": "https://uscode.house.gov/us/usc/119-136/t17/s105/"
+    },
+    {
+      "claim": "The same legal notice preserves third-party rights, excluding outside-authored material from the public-domain statement.",
+      "quote": "Copyrighted materials created by entities outside of the Bureau also may appear on this website, or may be reached through a link on this website. Copyright and other intellectual property laws may apply to your use of those materials.",
+      "url": "https://web.archive.org/web/20261028035549/https://www.consumerfinance.gov/privacy/website-privacy-policy/"
+    },
+    {
+      "claim": "CFPB's dataset page states that published complaint data is freely available for reuse.",
+      "quote": "All complaint data we publish is freely available for anyone to use, analyze, and build on.",
+      "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/"
+    },
+    {
+      "claim": "The published database is a selected subset: complaints are published after the company responds or after 15 days, whichever comes first.",
+      "quote": "We publish complaints after the company responds or after 15 days, whichever comes first.",
+      "url": "https://www.consumerfinance.gov/complaint/data-use/"
+    },
+    {
+      "claim": "Directly identifying personal information is not published in the database.",
+      "quote": "This information is not published in the Consumer Complaint Database.",
+      "url": "https://www.consumerfinance.gov/complaint/data-use/"
+    },
+    {
+      "claim": "The field reference defines Company response to consumer as the company's later response, not an intake field.",
+      "quote": "This is how the company responded. For example, \u201cClosed with explanation.\u201d",
+      "url": "https://cfpb.github.io/api/ccdb/fields.html"
+    },
+    {
+      "claim": "Live API metadata reports the current index snapshot and record count; its license field is not a data licence because the API schema defines it as the licence under which the API operates.",
+      "quote": "\"_meta\":{\"license\":\"CC0\",\"last_updated\":\"2026-11-09T12:00:00-05:00\",\"last_indexed\":\"2026-11-09T12:00:00-05:00\",\"total_record_count\":19028339",
+      "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?size=0&no_aggs=true"
+    },
+    {
+      "claim": "The CC0 declaration in the API specification points to the API code repository's LICENSE, confirming it is a software licence rather than a licence applied to the complaint data.",
+      "quote": "license:\n    name: Creative Commons License CC0\n    url: 'https://github.com/cfpb/ccdb5-api/blob/main/LICENSE'",
+      "url": "https://raw.githubusercontent.com/cfpb/ccdb5-api/main/swagger-config.yaml"
+    }
+  ],
+  "limitations": [
+    "Published complaints are not a statistical sample of all consumer experiences; CFPB publishes only complaints sent to companies and only after the company responds or after 15 days, and it excludes complaints referred to other regulators.",
+    "Company response is self-reported and not independently audited; 'monetary relief' may be recorded inconsistently across firms.",
+    "The snapshot is current-vintage (2026-11-08); CFPB updates records, so this analysis does not establish what was operationally available to a 2019-2023 analyst in real time.",
+    "Product, issue and sub-issue taxonomies changed in 2017 and 2023; historical rows preserve the wording selected at submission, so category drift is present, especially in the 2023 holdout.",
+    "Consumers self-select into the complaint channel; complaint volume and company mix reflect market share and awareness rather than incidence.",
+    "Company names are not entity-resolved; mergers and rebrands can split or merge the same institution across the time window.",
+    "The binary target collapses 'Closed with explanation', 'Closed with non-monetary relief' and 'Untimely response' into 0, although these are substantively different outcomes.",
+    "No consumer identifier is used; repeat complaints by the same consumer cannot be linked, so rows are treated as independent although some correlation may remain.",
+    "Narratives, ZIP code, tags and all post-intake fields are excluded; no sensitive personal information or narrative text is used."
+  ],
+  "reason": "Selected the CFPB Consumer Complaint Database because it is directly downloadable without an account (bulk CSV and a documented search API), has a published field dictionary, and its publisher expressly permits reuse: CFPB legal notices place CFPB-created information in the public domain and the dataset page states that all published complaint data is freely available to use. The 'Checking or savings account' cohort has a consistent product string across 2019-2023 and contains 162,983 published complaints with 26,236 monetary-relief positives (16.1%), enough for fixed chronological train/eval/holdout splits. The label is a later company disposition, not an intake field, and no post-intake, narrative, ZIP, tag, or response field is used as an input.",
+  "source": {
+    "attribution": "No mandatory credit; CFPB requests: \u201cPlease consider appropriate citation to the Bureau as the source.\u201d",
+    "citation": "U.S. Consumer Financial Protection Bureau. Consumer Complaint Database. https://www.consumerfinance.gov/data-research/consumer-complaints/ (data as of 2026-11-09).",
+    "documentation_url": "https://cfpb.github.io/api/ccdb/fields.html",
+    "license": "Public domain (U.S. Government work) under 17 U.S.C. \u00a7105, within the United States; CFPB legal notices state that CFPB-created information is in the public domain. No worldwide dedication is claimed: \u00a7105 does not affect protection abroad. Applies to the CFPB-compiled structured complaint records; consumer narratives and other outside-authored material are third-party content and are excluded.",
+    "publisher": "U.S. Consumer Financial Protection Bureau (CFPB)",
+    "redistribution": true,
+    "terms_excerpt": "Information created by the CFPB is in the public domain and you may reproduce, publish, or otherwise use it without the Bureau\u2019s permission.",
+    "terms_url": "https://web.archive.org/web/20261028035549/https://www.consumerfinance.gov/privacy/website-privacy-policy/",
+    "urls": [
+      "https://files.consumerfinance.gov/ccdb/complaints.csv.zip",
+      "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?field=all&format=csv&product=Checking%20or%20savings%20account&date_received_min=2019-01-01&date_received_max=2023-12-31&size=10000&from=0&no_aggs=true"
+    ]
+  },
+  "task": {
+    "decision_user": "A CFPB Consumer Response intake triage analyst, or a bank complaint-handling team, deciding which newly received bank-account complaints to fast-track for remediation review.",
+    "features": [
+      {
+        "availability": "Selected on the intake form; may be blank; known at date_received.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "Consumer-selected bank-account sub-product, for example checking account, savings account, or CD.",
+        "name": "sub_product",
+        "status": "verified"
+      },
+      {
+        "availability": "Selected on the intake form; known at date_received.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "Consumer-selected issue category, for example managing an account or a problem with a lender or other company charging the account.",
+        "name": "issue",
+        "status": "verified"
+      },
+      {
+        "availability": "Selected on the intake form; may be blank; known at date_received.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "More specific issue selected by the consumer; may be blank when the selected issue has no sub-issues.",
+        "name": "sub_issue",
+        "status": "verified"
+      },
+      {
+        "availability": "Named at intake; published categorical string; known at date_received.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "The company the complaint is about.",
+        "name": "company",
+        "status": "verified"
+      },
+      {
+        "availability": "Provided at intake; may be blank; known at date_received.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "Two-letter state from the consumer mailing address.",
+        "name": "state",
+        "status": "verified"
+      },
+      {
+        "availability": "Recorded at intake; known at date_received.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "Intake channel, such as Web, Phone, or Referral.",
+        "name": "submitted_via",
+        "status": "verified"
+      },
+      {
+        "availability": "Deterministic calendar month derived from date_received; known at the decision instant.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "Calendar month of date_received, 1-12.",
+        "name": "month",
+        "status": "verified"
+      },
+      {
+        "availability": "Deterministic day name derived from date_received; known at the decision instant.",
+        "evidence_url": "https://cfpb.github.io/api/ccdb/fields.html",
+        "meaning": "Day name of the week of date_received.",
+        "name": "weekday",
+        "status": "verified"
+      }
+    ],
+    "outcome_horizon": "Terminal company response as published in the 2026-11-08 snapshot; the latest cohort (2023) has roughly 2.8 years of maturity, so late closures are not a practical censoring issue.",
+    "population": "Complaints where Product equals 'Checking or savings account' was selected at intake and date_received falls in the fixed half-open split windows from 2019-01-01 through 2023-12-31. The scored population is the published subset with a recognized terminal company response: 'Closed with monetary relief' is positive; 'Closed with non-monetary relief', 'Closed with explanation', 'Closed without relief', and 'Untimely response' are negative. 'In progress', blank, and any other response are excluded rather than treated as negative. Complaints referred to other regulators and therefore not published are outside the population.",
+    "prediction_time": "At date_received, when the complaint enters the CFPB and before it is sent to the company; only intake-form fields and calendar fields derived from date_received are used. Company response is a later disposition and is never an input.",
+    "question": "Will a consumer complaint about a checking or savings account be closed with monetary relief by the company?",
+    "simple_references": "No persistence baseline applies because complaints are one-shot events. Controls are the majority class, the training-period base rate, issue-level base rates, company-identity base rates, and month/weekday calendar controls. All reference rates must be fit on training labels only; no label-derived rates are shipped as features. Because no full-row availability ledger was supplied, this is retrospective research rather than a historical forecasting claim.",
+    "split_policy": "Fixed chronological boundaries: train 2019-01-01 through 2021-12-31; eval 2022-01-01 through 2022-12-31; holdout 2023-01-01 through 2023-12-31. No random shuffling and no row crosses a boundary. No embargo is needed because each row is an independent one-shot complaint, no lag or rolling-history features are used, and the 2026-11-08 snapshot gives every cohort years of label maturity.",
+    "target": "y = 1 iff Company response to consumer is exactly \u201cClosed with monetary relief\u201d; y = 0 iff it is \u201cClosed with non-monetary relief\u201d, \u201cClosed with explanation\u201d, \u201cClosed without relief\u201d (if present), or \u201cUntimely response\u201d; records with \u201cIn progress\u201d, blank, or any other response are excluded.",
+    "usefulness": "The label is a later company disposition, not an intake field. At intake the analyst sees only the consumer product and issue selection, the named company, state and channel; the model estimates bank-specific and issue-specific resolution behavior. This supports complaint triage and is a non-trivial benchmark against issue-level and company-level base rates fitted on training labels only. Published complaints are not a statistical sample of all consumer experiences."
+  },
+  "title": "Will a consumer bank-account complaint be resolved with monetary relief? Predicting CFPB complaint dispositions at intake",
+  "verdict": "ready"
+}

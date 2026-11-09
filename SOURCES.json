@@ -1,0 +1,51 @@
+{
+  "publisher-terms.snapshot": {
+    "url": "https://web.archive.org/web/20261028035549/https://www.consumerfinance.gov/privacy/website-privacy-policy/",
+    "bytes": 172525,
+    "sha256": "57836b11431ef7f7c766ae2f0b5bbc4198028785e8b0fca3e7d8c2cc0a9c6402",
+    "retrieved_at_unix": 1794254465.0288694,
+    "transport_attempts": 1
+  },
+  "publisher-documentation.snapshot": {
+    "url": "https://cfpb.github.io/api/ccdb/fields.html",
+    "bytes": 9770,
+    "sha256": "99ad8aab6cbe7c8ebfb5909254492a9815b0fdf0d4cdf1356abbec51c8fdc2fe",
+    "retrieved_at_unix": 1794254465.06982,
+    "transport_attempts": 1
+  },
+  "cfpb_bank_complaints_2019_v2.csv": {
+    "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?format=csv&product=Checking%20or%20savings%20account&date_received_min=2019-01-01&date_received_max=2019-12-31&no_aggs=true",
+    "bytes": 6350645,
+    "sha256": "c0562082216701c816a3bc7562d54b52078f0c927f590e77ccf984ef8984d6e0",
+    "retrieved_at_unix": 1794254466.23607,
+    "transport_attempts": 1
+  },
+  "cfpb_bank_complaints_2020_v2.csv": {
+    "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?format=csv&product=Checking%20or%20savings%20account&date_received_min=2020-01-01&date_received_max=2020-12-31&no_aggs=true",
+    "bytes": 6938770,
+    "sha256": "d3f5a68be8a2bbf188a28ca9e3895f8056f6d5bfa575091c4bcd6a59ff912e14",
+    "retrieved_at_unix": 1794254467.036393,
+    "transport_attempts": 1
+  },
+  "cfpb_bank_complaints_2021_v2.csv": {
+    "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?format=csv&product=Checking%20or%20savings%20account&date_received_min=2021-01-01&date_received_max=2021-12-31&no_aggs=true",
+    "bytes": 8473609,
+    "sha256": "428524dfce6cda36a81633f38e0daf66a7f95e2c740a7dfe86728bf63cb23966",
+    "retrieved_at_unix": 1794254467.6559246,
+    "transport_attempts": 1
+  },
+  "cfpb_bank_complaints_2022_v2.csv": {
+    "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?format=csv&product=Checking%20or%20savings%20account&date_received_min=2022-01-01&date_received_max=2022-12-31&no_aggs=true",
+    "bytes": 10881581,
+    "sha256": "9b14f183160cd1c8f22012c79799b7252aceac9767c6845e08c47c15c9410808",
+    "retrieved_at_unix": 1794254469.1555693,
+    "transport_attempts": 1
+  },
+  "cfpb_bank_complaints_2023_v2.csv": {
+    "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?format=csv&product=Checking%20or%20savings%20account&date_received_min=2023-01-01&date_received_max=2023-12-31&no_aggs=true",
+    "bytes": 14539703,
+    "sha256": "25e0cfb64ff5efd249853c83a14adb4750feeca42f068d6238cc4b5ccc548da5",
+    "retrieved_at_unix": 1794254476.713747,
+    "transport_attempts": 1
+  }
+}

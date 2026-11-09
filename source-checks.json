@@ -1,0 +1,118 @@
+{
+  "checks": [
+    {
+      "check": "Publisher CSV display headers map to declared field names",
+      "observed": "{'Date received': 'date_received', 'Product': 'product', 'Sub-product': 'sub_product', 'Issue': 'issue', 'Sub-issue': 'sub_issue', 'Company': 'company', 'State': 'state', 'Submitted via': 'submitted_via', 'Company response to consumer': 'company_response', 'Complaint ID': 'complaint_id'}",
+      "expected": "every declared source field has a canonical publisher header match",
+      "passed": true
+    },
+    {
+      "check": "CFPB annual CSV exposes required ID, time, population, label and feature fields",
+      "observed": "['Date received', 'Product', 'Sub-product', 'Issue', 'Sub-issue', 'Company public response', 'Company', 'State', 'ZIP code', 'Tags', 'Submitted via', 'Date sent to company', 'Company response to consumer', 'Timely response?', 'Complaint ID']",
+      "expected": "contains complaint_id, date_received, product, company_response, sub_product, issue, sub_issue, company, state, submitted_via",
+      "passed": true
+    },
+    {
+      "check": "Annual CSV exports are complete and not truncated at the export cap",
+      "observed": "{'2019': 21734, '2020': 24238, '2021': 29556, '2022': 37582, '2023': 49873}",
+      "expected": "each year between 1 and 99999 rows, below the publisher 100000-row CSV export cap",
+      "passed": true
+    },
+    {
+      "check": "Population product filter uses publisher product value",
+      "observed": "{'included_rows': 162983, 'other_product_counts': {}}",
+      "expected": "rows with product equal to Checking or savings account included; other products excluded",
+      "passed": true
+    },
+    {
+      "check": "Requested annual event windows return parsed rows",
+      "observed": "{'rows_by_year': {2019: 21734, 2020: 24238, 2021: 29556, 2022: 37582, 2023: 49873}, 'invalid_dates_in_product_rows': 0, 'rows_outside_2019_2023_excluded': 0}",
+      "expected": "zero unparseable dates among product rows; each year 2019 through 2023 represented with at least 5000 rows",
+      "passed": true
+    },
+    {
+      "check": "Label mapping uses exact terminal disposition strings",
+      "observed": "{'response_counts': {'Closed with explanation': 128260, 'Closed with monetary relief': 26236, 'Closed with non-monetary relief': 8434, 'Untimely response': 53}, 'unknown_or_nonterminal_excluded': {}, 'scored_rows': 162983}",
+      "expected": "Closed with monetary relief maps to 1; recognized other terminal dispositions map to 0; in progress, blank and other responses are excluded",
+      "passed": true
+    },
+    {
+      "check": "Stable complaint IDs and event times are nonmissing and unique in scored rows",
+      "observed": "{'missing_ids': 0, 'missing_times': 0, 'duplicate_ids': 0}",
+      "expected": "zero missing and zero duplicate complaint IDs; zero missing event times",
+      "passed": true
+    },
+    {
+      "check": "Missing categorical values remain blank and are never zero or literal nan",
+      "observed": "{'literal_nan_counts': {'sub_product': 0, 'issue': 0, 'sub_issue': 0, 'company': 0, 'state': 0, 'submitted_via': 0}, 'blank_counts': {'sub_product': 0, 'issue': 0, 'sub_issue': 0, 'company': 0, 'state': 0, 'submitted_via': 0}}",
+      "expected": "zero literal nan strings; blank strings are allowed for optional intake fields",
+      "passed": true
+    },
+    {
+      "check": "Fixed chronological half-open splits are nonempty",
+      "observed": "{'train': 75528, 'eval': 37582, 'holdout': 49873}",
+      "expected": "train 2019-01-01 to 2022-01-01; eval 2022-01-01 to 2023-01-01; holdout 2023-01-01 onward",
+      "passed": true
+    },
+    {
+      "check": "Every scored row falls in exactly one fixed split",
+      "observed": "{'split_rows': {'train': 75528, 'eval': 37582, 'holdout': 49873}, 'scored_rows': 162983}",
+      "expected": "sum of split row counts equals scored row count",
+      "passed": true
+    },
+    {
+      "check": "Split boundaries are respected without row crossover",
+      "observed": "{'train_max': '2021-12-31 23:50:17+00:00', 'eval_min': '2022-01-01 00:01:19+00:00', 'eval_max': '2022-12-31 23:50:53+00:00', 'holdout_min': '2023-01-01 01:01:41+00:00'}",
+      "expected": "train below 2022-01-01; eval from 2022-01-01 to below 2023-01-01; holdout from 2023-01-01",
+      "passed": true
+    },
+    {
+      "check": "Constructed files contain exactly declared columns",
+      "observed": "{'train': ['complaint_id', 'date_received', 'sub_product', 'issue', 'sub_issue', 'company', 'state', 'submitted_via', 'month', 'weekday', 'monetary_relief'], 'eval': ['complaint_id', 'date_received', 'sub_product', 'issue', 'sub_issue', 'company', 'state', 'submitted_via', 'month', 'weekday', 'monetary_relief'], 'holdout': ['complaint_id', 'date_received', 'sub_product', 'issue', 'sub_issue', 'company', 'state', 'submitted_via', 'month', 'weekday', 'monetary_relief']}",
+      "expected": "['complaint_id', 'date_received', 'sub_product', 'issue', 'sub_issue', 'company', 'state', 'submitted_via', 'month', 'weekday', 'monetary_relief']",
+      "passed": true
+    },
+    {
+      "check": "Written event timestamps are timezone-naive and inside the declared half-open split windows",
+      "observed": "{'ranges': {'train': {'min': '2019-01-01 00:56:40', 'max': '2021-12-31 23:50:17', 'rows': 75528}, 'eval': {'min': '2022-01-01 00:01:19', 'max': '2022-12-31 23:50:53', 'rows': 37582}, 'holdout': {'min': '2023-01-01 01:01:41', 'max': '2023-12-31 23:23:41', 'rows': 49873}}, 'tz_aware_or_unparsed_splits': []}",
+      "expected": "every constructed time string parses without a timezone offset and lies within the declared train, eval and holdout windows",
+      "passed": true
+    },
+    {
+      "check": "Target is binary and unknown outcomes are not negative labels",
+      "observed": "{'target_values': [0, 1], 'unknown_or_nonterminal_excluded_count': 0}",
+      "expected": "target values subset of 0 and 1; unknown outcomes excluded",
+      "passed": true
+    },
+    {
+      "check": "No post-intake label or disposition field is used as a feature",
+      "observed": "[]",
+      "expected": "empty feature-label overlap",
+      "passed": true
+    },
+    {
+      "check": "Calendar features are deterministic functions of the event date",
+      "observed": "{'parsed_rows': 162983, 'months_match': True, 'weekdays_match': True}",
+      "expected": "every month matches the parsed month and every weekday matches the parsed day name",
+      "passed": true
+    },
+    {
+      "check": "Complaint IDs do not overlap across the three fixed splits",
+      "observed": "{'overlap_count': 0}",
+      "expected": "zero overlapping complaint IDs",
+      "passed": true
+    },
+    {
+      "check": "Constructed rows are sorted deterministically by event time and ID",
+      "observed": "True",
+      "expected": "each split is nondecreasing by date_received",
+      "passed": true
+    },
+    {
+      "check": "Constructed CSV files exist and are nonempty",
+      "observed": "{'public/train.csv': 11193170, 'public/eval.csv': 5566345, 'private/holdout.csv': 7395848}",
+      "expected": "each output file larger than zero bytes",
+      "passed": true
+    }
+  ]
+}
