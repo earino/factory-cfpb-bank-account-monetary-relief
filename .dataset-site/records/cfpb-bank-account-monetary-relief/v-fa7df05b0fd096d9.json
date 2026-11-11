@@ -1,0 +1,311 @@
+{
+  "artifact_version": "9f471e2cfd980ea753159195b0bd7df7d97bb31cefd4dba3b6c377e74118ef8a",
+  "assets": {
+    "LICENSE-EVIDENCE.json": {
+      "bytes": 721,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/LICENSE-EVIDENCE.json",
+      "hf_path": "LICENSE-EVIDENCE.json",
+      "sha256": "db93d6b1964c855fcb5d6236abdef85a09e12ab1a4e3debcf3b64d9f5905bd9d"
+    },
+    "LICENSE.md": {
+      "bytes": 1503,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/LICENSE.md",
+      "hf_path": "LICENSE.md",
+      "sha256": "1c5ec9fd84ee45dacfa64daedca030ad63c35c1afc4c6221aadf572186516c75"
+    },
+    "README.md": {
+      "bytes": 4553,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/README.md",
+      "hf_path": "README.md",
+      "sha256": "744a172df8650376d4c9836870c7732057e576bb82d5b03564755d5951168dc5"
+    },
+    "SOURCES.json": {
+      "bytes": 2815,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/SOURCES.json",
+      "hf_path": "SOURCES.json",
+      "sha256": "adef51183e1be816e831fca4e5cc4bb4fe49bf588eff35edd32360059b73cda9"
+    },
+    "evaluation.json": {
+      "bytes": 1411,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/evaluation.json",
+      "hf_path": "evaluation.json",
+      "sha256": "5c56f1e9f9bded8175ab84895a2b70accf6d47ca8f500731ede509bf7685a8c8"
+    },
+    "extract__meta.json": {
+      "bytes": 1388,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/extract__meta.json",
+      "hf_path": "extract/meta.json",
+      "sha256": "9f581cd0dbeade00e60ff19019f8f9f45b626a22c374446d85cf06430743d02e"
+    },
+    "extract__private__holdout.csv": {
+      "bytes": 7395848,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/extract__private__holdout.csv",
+      "hf_path": "extract/private/holdout.csv",
+      "sha256": "f1a0609a45c2bd1efc664e192c255b6aa82b41f4c7e140ca538c103154a2ac9e"
+    },
+    "extract__public__eval.csv": {
+      "bytes": 5566345,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/extract__public__eval.csv",
+      "hf_path": "extract/public/eval.csv",
+      "sha256": "7829a9c56b5096c679096ddd504b11ef3607545f7a8f808c96f12bc79db9ab0c"
+    },
+    "extract__public__train.csv": {
+      "bytes": 11193170,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/extract__public__train.csv",
+      "hf_path": "extract/public/train.csv",
+      "sha256": "b873ccb82a0065719c15bd6241998ffe7bb967d2056b81ac89a12140feec7264"
+    },
+    "extract__quality.json": {
+      "bytes": 17073,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/extract__quality.json",
+      "hf_path": "extract/quality.json",
+      "sha256": "1962068d8f00e65bb222e361b6acf1fd08f177ddb838b0e993b99b018a3fd331"
+    },
+    "get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/get_dataset.py",
+      "hf_path": "get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "qualification.json": {
+      "bytes": 16428,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/qualification.json",
+      "hf_path": "qualification.json",
+      "sha256": "1e76c99280ef4576f7e95348502983de19bf936a26fb47e6f70e5ed924068e4d"
+    },
+    "reproduction__LICENSE-CC0-1.0.txt": {
+      "bytes": 7048,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__LICENSE-CC0-1.0.txt",
+      "hf_path": "reproduction/LICENSE-CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "reproduction__LICENSE-MIT.txt": {
+      "bytes": 1124,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__LICENSE-MIT.txt",
+      "hf_path": "reproduction/LICENSE-MIT.txt",
+      "sha256": "56b932ff064e5da113ae10175c8546325f64f26e1ece71683ffcbf8b2304fe1c"
+    },
+    "reproduction__artifact_scrub.py": {
+      "bytes": 11369,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__artifact_scrub.py",
+      "hf_path": "reproduction/artifact_scrub.py",
+      "sha256": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68"
+    },
+    "reproduction__build.py": {
+      "bytes": 19372,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__build.py",
+      "hf_path": "reproduction/build.py",
+      "sha256": "a5b5e1bb8509815d086f14166de5fb2517bc12f22d4021f22911c1fd8682d8d1"
+    },
+    "reproduction__construction.json": {
+      "bytes": 19588,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__construction.json",
+      "hf_path": "reproduction/construction.json",
+      "sha256": "f08ccf138d4b08383a66c79fe8ae9c06d000d25ad16e7bf487f6972dc4ed0fb6"
+    },
+    "reproduction__dataset_package.py": {
+      "bytes": 7927,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__dataset_package.py",
+      "hf_path": "reproduction/dataset_package.py",
+      "sha256": "c2364defe58dcc99322be59a1bb04894ce00e823ce37afeb37bc31012f744327"
+    },
+    "reproduction__dataset_run.py": {
+      "bytes": 12381,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__dataset_run.py",
+      "hf_path": "reproduction/dataset_run.py",
+      "sha256": "8085fae14d6e93b852e692e18c1ef72113a3601f48f78901b6d1ae6db278de57"
+    },
+    "reproduction__get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__get_dataset.py",
+      "hf_path": "reproduction/get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "reproduction__leakage_battery.py": {
+      "bytes": 17379,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__leakage_battery.py",
+      "hf_path": "reproduction/leakage_battery.py",
+      "sha256": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3"
+    },
+    "reproduction__provenance.json": {
+      "bytes": 573,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__provenance.json",
+      "hf_path": "reproduction/provenance.json",
+      "sha256": "d78b229f05242deabc2d69a9cc8965ec1332dbc5946b4415ce3c6807e27caba8"
+    },
+    "reproduction__qualify_dataset.py": {
+      "bytes": 66067,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__qualify_dataset.py",
+      "hf_path": "reproduction/qualify_dataset.py",
+      "sha256": "bff6d43d0904182e2612c32bab702e41addbf389904a236c209e78be39e37a6b"
+    },
+    "reproduction__recovery_recipes.py": {
+      "bytes": 17609,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__recovery_recipes.py",
+      "hf_path": "reproduction/recovery_recipes.py",
+      "sha256": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "reproduction__requirements.txt": {
+      "bytes": 160,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__requirements.txt",
+      "hf_path": "reproduction/requirements.txt",
+      "sha256": "5c72f3268174d20364624f76680e189c408a05dba2e7b8cfe12d077b3865e7f0"
+    },
+    "reproduction__source.json": {
+      "bytes": 17766,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__source.json",
+      "hf_path": "reproduction/source.json",
+      "sha256": "a59c26b2364fb4d8d89e8e2b020757a548069bd7bd117511251c42f0294aa910"
+    },
+    "reproduction__source_io.py": {
+      "bytes": 5607,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__source_io.py",
+      "hf_path": "reproduction/source_io.py",
+      "sha256": "0c60eed4968cd342148efbaac7e4fa98f00708d8e6c14c0929928687b9af1ea3"
+    },
+    "reproduction__train.py": {
+      "bytes": 2500,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__train.py",
+      "hf_path": "reproduction/train.py",
+      "sha256": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8"
+    },
+    "reproduction__validate.py": {
+      "bytes": 1277,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__validate.py",
+      "hf_path": "reproduction/validate.py",
+      "sha256": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b"
+    },
+    "reproduction__validate.sh": {
+      "bytes": 482,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/reproduction__validate.sh",
+      "hf_path": "reproduction/validate.sh",
+      "sha256": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+    },
+    "source-checks.json": {
+      "bytes": 7202,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/source-checks.json",
+      "hf_path": "source-checks.json",
+      "sha256": "911f365d58a27ef9de5f48be604d295526786fae5ecb891163a072e326d24a31"
+    },
+    "source-snapshot.tar.gz": {
+      "bytes": 4805102,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/source-snapshot.tar.gz",
+      "hf_path": "source-snapshot.tar.gz",
+      "sha256": "92ff483eb62cd76a1c56cc398f21fa73f07490e28ba25b71ae081f8bc28a07b7"
+    },
+    "verify_dataset.py": {
+      "bytes": 1276,
+      "download": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/download/v-fa7df05b0fd096d9/verify_dataset.py",
+      "hf_path": "verify_dataset.py",
+      "sha256": "f4a4bb7f565cdbd075c520621f881876b491eaed91a5e6e70afb31e4753f9834"
+    }
+  },
+  "baseline": {
+    "metrics": {
+      "Validation calendar_identity auc": 0.5091543168210645,
+      "Validation calendar_identity brier": 0.1340587658722308,
+      "Validation full_model auc": 0.7412404943853466,
+      "Validation full_model brier": 0.12052050807755041,
+      "Validation majority_prior auc": 0.5,
+      "Validation majority_prior brier": 0.13404766161474882
+    },
+    "scope": "Existing unmodified runner baseline on public validation only; no holdout scoring"
+  },
+  "configs": [],
+  "dataset": "cfpb-bank-account-monetary-relief",
+  "documents": [
+    [
+      "README.md",
+      "Loading and reproduction"
+    ],
+    [
+      "evaluation.json",
+      "Measured baseline"
+    ],
+    [
+      "LICENSE.md",
+      "Licence and attribution"
+    ]
+  ],
+  "domain": "U.S. Consumer Financial Protection Bureau (CFPB)",
+  "evaluation_use": "retrospective_research",
+  "github_repository": "earino/factory-cfpb-bank-account-monetary-relief",
+  "hf_repository": "earino/factory-cfpb-bank-account-monetary-relief",
+  "licenses": {
+    "attribution": "No mandatory credit; CFPB requests: “Please consider appropriate citation to the Bureau as the source.”",
+    "citation": "U.S. Consumer Financial Protection Bureau. Consumer Complaint Database. https://www.consumerfinance.gov/data-research/consumer-complaints/ (data as of 2026-11-09).",
+    "code": "MIT",
+    "compilation_scope": "Our additional compilation rights only; upstream terms remain in force.",
+    "data_compilation": "CC0-1.0",
+    "source_data": "Public domain (U.S. Government work) under 17 U.S.C. §105, within the United States; CFPB legal notices state that CFPB-created information is in the public domain. No worldwide dedication is claimed: §105 does not affect protection abroad. Applies to the CFPB-compiled structured complaint records; consumer narratives and other outside-authored material are third-party content and are excluded."
+  },
+  "limitations": [
+    "Published complaints are not a statistical sample of all consumer experiences; CFPB publishes only complaints sent to companies and only after the company responds or after 15 days, and it excludes complaints referred to other regulators.",
+    "Company response is self-reported and not independently audited; 'monetary relief' may be recorded inconsistently across firms.",
+    "The snapshot is current-vintage (2026-11-08); CFPB updates records, so this analysis does not establish what was operationally available to a 2019-2023 analyst in real time.",
+    "Product, issue and sub-issue taxonomies changed in 2017 and 2023; historical rows preserve the wording selected at submission, so category drift is present, especially in the 2023 holdout.",
+    "Consumers self-select into the complaint channel; complaint volume and company mix reflect market share and awareness rather than incidence.",
+    "Company names are not entity-resolved; mergers and rebrands can split or merge the same institution across the time window.",
+    "The binary target collapses 'Closed with explanation', 'Closed with non-monetary relief' and 'Untimely response' into 0, although these are substantively different outcomes.",
+    "No consumer identifier is used; repeat complaints by the same consumer cannot be linked, so rows are treated as independent although some correlation may remain.",
+    "Narratives, ZIP code, tags and all post-intake fields are excluded; no sensitive personal information or narrative text is used.",
+    "Company response is self-reported and not independently audited; monetary relief may be recorded inconsistently across firms.",
+    "The snapshot is current-vintage; CFPB updates records, so this analysis does not establish what was operationally available to a 2019-2023 analyst in real time, and training_label_timing is unverified.",
+    "The binary target collapses 'Closed with explanation', 'Closed with non-monetary relief', and 'Untimely response' into 0 although these are substantively different outcomes.",
+    "No full-row availability ledger or historical publication dates were supplied; timing observations are empty and period/lag fields are null rather than invented.",
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "post": {
+    "paragraphs": [
+      "Will a consumer complaint about a checking or savings account be closed with monetary relief by the company?",
+      "Population: Complaints where Product equals 'Checking or savings account' was selected at intake and date_received falls in the fixed half-open split windows from 2019-01-01 through 2023-12-31. The scored population is the published subset with a recognized terminal company response: 'Closed with monetary relief' is positive; 'Closed with non-monetary relief', 'Closed with explanation', 'Closed without relief', and 'Untimely response' are negative. 'In progress', blank, and any other response are excluded rather than treated as negative. Complaints referred to other regulators and therefore not published are outside the population.",
+      "Target: y = 1 iff Company response to consumer is exactly “Closed with monetary relief”; y = 0 iff it is “Closed with non-monetary relief”, “Closed with explanation”, “Closed without relief” (if present), or “Untimely response”; records with “In progress”, blank, or any other response are excluded.",
+      "Prediction time: At date_received, when the complaint enters the CFPB and before it is sent to the company; only intake-form fields and calendar fields derived from date_received are used. Company response is a later disposition and is never an input.",
+      "Splits: Fixed chronological boundaries: train 2019-01-01 through 2021-12-31; eval 2022-01-01 through 2022-12-31; holdout 2023-01-01 through 2023-12-31. No random shuffling and no row crosses a boundary. No embargo is needed because each row is an independent one-shot complaint, no lag or rolling-history features are used, and the 2026-11-08 snapshot gives every cohort years of label maturity.",
+      "Outcome horizon: Terminal company response as published in the 2026-11-08 snapshot; the latest cohort (2023) has roughly 2.8 years of maturity, so late closures are not a practical censoring issue.",
+      "Inputs: sub_product: Consumer-selected bank-account sub-product, for example checking account, savings account, or CD.; issue: Consumer-selected issue category, for example managing an account or a problem with a lender or other company charging the account.; sub_issue: More specific issue selected by the consumer; may be blank when the selected issue has no sub-issues.; company: The company the complaint is about.; state: Two-letter state from the consumer mailing address.; submitted_via: Intake channel, such as Web, Phone, or Referral.; month: Calendar month of date_received, 1-12.; weekday: Day name of the week of date_received."
+    ],
+    "title": "Will a consumer bank-account complaint be resolved with monetary relief? Predicting CFPB complaint dispositions at intake"
+  },
+  "publication_commits": {
+    "github": "bd6d34242a83d1bb792291f9098fcfdea8dd38fb",
+    "huggingface": "63978a432f4bf83ef3b83aa5f6367694b6e5a327"
+  },
+  "qualification": {
+    "gate_version": "1.6.1",
+    "result": "PASSED"
+  },
+  "record_sha256": "03f7c33c1d42298c9be1a71cb94854d49fcb92e9de7db0774d581fee0349e3be",
+  "release_date": "2026-11-09",
+  "release_schema": "factory-1",
+  "release_tag": "v-fa7df05b0fd096d9",
+  "schema_version": 1,
+  "site_revision": 1,
+  "source": {
+    "name": "U.S. Consumer Financial Protection Bureau (CFPB)",
+    "url": "https://cfpb.github.io/api/ccdb/fields.html"
+  },
+  "splits": {
+    "eval": {
+      "rows": 37582
+    },
+    "holdout": {
+      "rows": 49873
+    },
+    "train": {
+      "rows": 75528
+    }
+  },
+  "summary": "Will a consumer complaint about a checking or savings account be closed with monetary relief by the company?",
+  "task_type": "binary-classification",
+  "title": "Will a consumer bank-account complaint be resolved with monetary relief? Predicting CFPB complaint dispositions at intake",
+  "urls": {
+    "catalog": "https://earino.github.io/dataset-factory-site/",
+    "github": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief",
+    "github_release": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief/releases/tag/v-fa7df05b0fd096d9",
+    "huggingface": "https://huggingface.co/datasets/earino/factory-cfpb-bank-account-monetary-relief",
+    "huggingface_version": "https://huggingface.co/datasets/earino/factory-cfpb-bank-account-monetary-relief/tree/v-fa7df05b0fd096d9",
+    "version": "https://earino.github.io/factory-cfpb-bank-account-monetary-relief/versions/v-fa7df05b0fd096d9/",
+    "website": "https://earino.github.io/factory-cfpb-bank-account-monetary-relief/"
+  }
+}
