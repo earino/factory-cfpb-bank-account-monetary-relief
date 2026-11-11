@@ -265,7 +265,7 @@
       "Outcome horizon: Terminal company response as published in the 2026-11-08 snapshot; the latest cohort (2023) has roughly 2.8 years of maturity, so late closures are not a practical censoring issue.",
       "Inputs: sub_product: Consumer-selected bank-account sub-product, for example checking account, savings account, or CD.; issue: Consumer-selected issue category, for example managing an account or a problem with a lender or other company charging the account.; sub_issue: More specific issue selected by the consumer; may be blank when the selected issue has no sub-issues.; company: The company the complaint is about.; state: Two-letter state from the consumer mailing address.; submitted_via: Intake channel, such as Web, Phone, or Referral.; month: Calendar month of date_received, 1-12.; weekday: Day name of the week of date_received."
     ],
-    "title": "Will a consumer bank-account complaint be resolved with monetary relief? Predicting CFPB complaint dispositions at intake"
+    "title": "CFPB Bank Account Monetary Relief"
   },
   "publication_commits": {
     "github": "bd6d34242a83d1bb792291f9098fcfdea8dd38fb",
@@ -275,12 +275,12 @@
     "gate_version": "1.6.1",
     "result": "PASSED"
   },
-  "record_sha256": "03f7c33c1d42298c9be1a71cb94854d49fcb92e9de7db0774d581fee0349e3be",
+  "record_sha256": "c48d94e7820ca7701aef4076ad04cdfed539721b766eeb15f66372c82f1c6a47",
   "release_date": "2026-11-09",
   "release_schema": "factory-1",
   "release_tag": "v-fa7df05b0fd096d9",
   "schema_version": 1,
-  "site_revision": 1,
+  "site_revision": 2,
   "source": {
     "name": "U.S. Consumer Financial Protection Bureau (CFPB)",
     "url": "https://cfpb.github.io/api/ccdb/fields.html"
@@ -298,7 +298,7 @@
   },
   "summary": "Will a consumer complaint about a checking or savings account be closed with monetary relief by the company?",
   "task_type": "binary-classification",
-  "title": "Will a consumer bank-account complaint be resolved with monetary relief? Predicting CFPB complaint dispositions at intake",
+  "title": "CFPB Bank Account Monetary Relief",
   "urls": {
     "catalog": "https://earino.github.io/dataset-factory-site/",
     "github": "https://github.com/earino/factory-cfpb-bank-account-monetary-relief",
